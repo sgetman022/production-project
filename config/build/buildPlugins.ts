@@ -1,8 +1,8 @@
 import * as webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import HtmlWebpackPlugin = require('html-webpack-plugin');
+import MiniCssExtractPlugin = require('mini-css-extract-plugin');
 import { BuildOptions } from './types/config';
-import HtmlWebpackPlugin = require("html-webpack-plugin");
-import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
@@ -17,7 +17,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-    ]
+    ];
 
     if (isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin());
