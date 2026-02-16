@@ -2,7 +2,7 @@ import * as webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 import HtmlWebpackPlugin = require("html-webpack-plugin");
-import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
+import MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
