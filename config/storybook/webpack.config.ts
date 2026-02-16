@@ -1,5 +1,6 @@
-import webpack, { RuleSetRule } from 'webpack';
-import path from 'path';
+import * as webpack from 'webpack';
+import { RuleSetRule } from 'webpack';
+const path = require('path');
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
